@@ -32,7 +32,7 @@ let winImg, looseImg;
 let starImg, hearthImg;
 let lastCollisionTime = 0;
 let lastBulletTime = 0;
-let bgImage, plane, selectedPlaneName;
+let  plane, selectedPlaneName;
 let showDamageEffect = false;
 let damageEffectDuration = 200; 
 let lastDamageTime = 0;
@@ -80,7 +80,6 @@ function preload() {
   mainSound = loadSound("sounds/main.mp3");
   reloadSound = loadSound("sounds/reload.mp3");
 
-  bgImage = loadImage("images/bgStart.jpg");
   bulletImg = loadImage("images/objectsImg/arm.png");
   heartImg = loadImage("images/objectsImg/hearth.png");
   starImg = loadImage("images/objectsImg/star.png");
