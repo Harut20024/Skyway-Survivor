@@ -1,5 +1,5 @@
 # Skyway Survivor
-![Portfollio](https://github.com/Harut20024/DoodleJump/blob/main/photos/screen.png)
+![Image](https://github.com/Harut20024/Skyway-Survivor/blob/main/images/backgraundImage.png)
 
 Welcome to the Skyway Survivor Game, an exciting and fun platformer game that promises to keep you fun! This game, developed Game where you can Survive in space,and react to you victory
 
