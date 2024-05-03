@@ -32,9 +32,9 @@ let winImg, looseImg;
 let starImg, hearthImg;
 let lastCollisionTime = 0;
 let lastBulletTime = 0;
-let  plane, selectedPlaneName;
+let plane, selectedPlaneName;
 let showDamageEffect = false;
-let damageEffectDuration = 200; 
+let damageEffectDuration = 200;
 let lastDamageTime = 0;
 let gameOver = false;
 let hasSoundPlayed = false,
@@ -203,12 +203,11 @@ function draw() {
 
   if (showDamageEffect) {
     if (millis() - lastDamageTime <= damageEffectDuration) {
-        drawDamageEffect();
+      drawDamageEffect();
     } else {
-        showDamageEffect = false;
+      showDamageEffect = false;
     }
-}
-
+  }
 }
 
 function mouseClicked() {
@@ -391,14 +390,14 @@ function keyPressed() {
 /////////////////////////////////////////
 
 function drawDamageEffect() {
-  let edgeThickness = 20; 
+  let edgeThickness = 20;
 
   let red1 = color(255, 0, 0);
   let red2 = color(100, 0, 0);
 
-  setGradientRed(0, 0, width, edgeThickness, red1, red2); 
-  setGradientRed(0, height - edgeThickness, width, edgeThickness, red1, red2); 
-  setGradientRed(0, 0, edgeThickness, height, red1, red2); 
+  setGradientRed(0, 0, width, edgeThickness, red1, red2);
+  setGradientRed(0, height - edgeThickness, width, edgeThickness, red1, red2);
+  setGradientRed(0, 0, edgeThickness, height, red1, red2);
   setGradientRed(width - edgeThickness, 0, edgeThickness, height, red1, red2);
 }
 
@@ -420,7 +419,6 @@ function setGradientRed(x, y, w, h, c1, c2) {
     line(x, i, x + w, i);
   }
 }
-
 
 function setGradient(x, y, w, h) {
   noFill();
@@ -596,24 +594,23 @@ function AddingLines() {
 
     if (lines[i].collidesWith(plane)) {
       let currentTime = millis();
-  
+
       if (currentTime - lastCollisionTime > 1000) {
-          lives--;
-          hitSound.play();
-          lastCollisionTime = currentTime;
-          lines.splice(i, 1);
-  
-          if (lives <= 0) {
-              gameOver = true;
-              break;
-          }
-  
-          showDamageEffect = true;
-          lastDamageTime = currentTime;
+        lives--;
+        hitSound.play();
+        lastCollisionTime = currentTime;
+        lines.splice(i, 1);
+
+        if (lives <= 0) {
+          gameOver = true;
+          break;
+        }
+
+        showDamageEffect = true;
+        lastDamageTime = currentTime;
       }
       break;
-  }
-  
+    }
 
     for (let j = bullets.length - 1; j >= 0; j--) {
       if (lines[i].collidesWithBullet(bullets[j])) {
@@ -809,8 +806,11 @@ function displayStartText() {
   fill(255);
   textSize(50);
   textAlign(CENTER, CENTER);
-  let imageY = height / 8 + 70;
-  image(startImg, width / 2 - 100, imageY, 200, 100);
+  let imageY = height / 8 + 55;
+  let imgWidth = width * 0.15;
+  let imgHeight = imgWidth * 0.5;
+  let imgX = width / 2 - imgWidth / 2;
+  image(startImg, imgX, imageY, imgWidth, imgHeight);
 
   showStartText = true;
   showStartText = true;
