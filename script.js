@@ -240,13 +240,14 @@ function mouseClicked() {
       }
     }
   }
-  if (
-    showStartText &&
-    mouseX > width / 2.2 - 50 &&
-    mouseX < width / 1.8 + 50 &&
-    mouseY > height / 4 - 25 &&
-    mouseY < height / 4 + 25
-  ) {
+  let imageY = height / 8 + 55;
+  let imgWidth = width * 0.15;
+  let imgHeight = imgWidth * 0.5;
+  let imgX = width / 2 - imgWidth / 2;
+
+  // Checking if the mouse click is within the bounds of the startImg
+  if (mouseX > imgX && mouseX < imgX + imgWidth &&
+      mouseY > imageY && mouseY < imageY + imgHeight) {
     startGame();
     userStartAudio();
   }
@@ -384,8 +385,6 @@ function keyPressed() {
     gamePause = !gamePause;
   }
 }
-/////////////////////////////////////////
-/////////////////////////////////////////
 /////////////////////////////////////////
 /////////////////////////////////////////
 
